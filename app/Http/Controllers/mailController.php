@@ -25,8 +25,7 @@ class mailController extends Controller
             'title' =>  $request['subject'],
             'start-date'=> $request['start-date'],
             'finish-date'=> $request['finish-date'],
-//            'name'=>$request['name'],
-//            'email'=>$request['email'],
+
             'body' => $body,
         ];
         $all = $request->except('_token','terms');

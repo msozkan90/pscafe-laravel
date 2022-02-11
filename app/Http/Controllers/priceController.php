@@ -9,7 +9,7 @@ class priceController extends Controller
 {
     public function price(){
         $prices=price::all();
-//        $all = $data->orderBy('created_at','DESC');
+
         return view('prices',['prices'=>$prices]);
     }
 

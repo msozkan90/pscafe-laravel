@@ -1,10 +1,7 @@
 @extends('layout2')
 @section('style')
     <style>
-.ann-detail{
 
-
-}
 
     </style>
 @endsection
@@ -25,9 +22,7 @@
                                         <a href=""><img src="{{asset(\App\Helper\imageUpload::largeImage($announcement['image']))}}" alt="Student Training"></a>
                                     </div>
                                     <div class="down-content" style="min-height: 150px!important;max-height: 150px!important;padding-top: 5px">
-                                        {{--                                    <div class="date">--}}
-                                        {{--                                        <h9> <span></span></h9>--}}
-                                        {{--                                    </div>--}}
+
                                         <div style="padding-left: 0px!important;padding-top: 30px!important;float:left">
                                             <a href="meeting-details.html"><h4>{{$announcement->title}}</h4></a>
 

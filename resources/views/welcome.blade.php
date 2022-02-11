@@ -18,17 +18,7 @@ $datas=['images/arapas/116243605_316779713061423_8399979231582531272_n.jpg',
 
 @section('style')
     <style>
-        /*.item{*/
-        /*    position: relative;*/
-        /*}*/
-        /*.buton-fee{*/
-        /*    position: absolute;*/
-        /*    right: 10px;*/
-        /*    bottom: 20px;*/
-        /*}*/
-        /*.fb-page{*/
-        /* height: 1000px!important;*/
-        /*}*/
+
         .hp-pic{
             max-height: 280px!important;
             max-width: 380px!important;
@@ -46,12 +36,7 @@ $datas=['images/arapas/116243605_316779713061423_8399979231582531272_n.jpg',
 @endsection
 @section('content')
 
-{{--    @if (session('status'))--}}
-{{--        <div class="alert alert-success" role="alert">--}}
-{{--            {{ session('status') }}--}}
-{{--        </div>--}}
-{{--    @endif--}}
-{{--{{ __('You are logged in!') }}--}}
+
 
 <!-- ***** Main Banner Area Start ***** -->
 <section class="section main-banner" id="top" data-section="section1">
@@ -200,29 +185,3 @@ $datas=['images/arapas/116243605_316779713061423_8399979231582531272_n.jpg',
 @endsection
 
 
-{{--<div class="item" style="min-height: 400px!important;max-height: 400px!important;background-size: cover">--}}
-
-{{--    <img src="{{asset($price['image'])}}" alt="Course One">--}}
-{{--    <div class="down-content">--}}
-{{--        <h4 class="pt-0">{{$price['content']}}</h4>--}}
-{{--        <div class="info ">--}}
-{{--            <div class="row pb-2 mt-0">--}}
-{{--                <div class=" pt-0 mt-0">--}}
-{{--                    <p class="pt-0 mt-0"> <b> {{$price['category']}}</b>  </p>--}}
-{{--                </div>--}}
-{{--                <div class="pt-0 mt-0">--}}
-{{--                    <p><b>{{$price['price']}}₺</b></p>--}}
-{{--                    <a href="{{route('contact')}}" style="" class="buton-fee"><button class="btn btn-info" style="width: 115px;height: 40px;" ><p style="font-size: small;font-weight: bold">Rezervasyon </p> </button></a>--}}
-
-{{--                </div>--}}
-{{--            </div>--}}
-{{--        </div>--}}
-{{--    </div>--}}
-{{--</div>--}}
-
-
-{{--<div class="fb-page col-lg-4"  data-href="https://www.facebook.com/arapasplaystation/" data-tabs="timeline"  data-width="" data-height="825px" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">--}}
-{{--    <div cite="https://www.facebook.com/arapasplaystation/" class="fb-xfbml-parse-ignore">--}}
-{{--        <a href="https://www.facebook.com/arapasplaystation/">ArapasPlaystationCafe</a>--}}
-{{--    </div>--}}
-{{--</div>--}}

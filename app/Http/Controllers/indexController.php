@@ -10,7 +10,7 @@ class indexController extends Controller
     public function index(){
         $data=Announcement::orderBy('created_at', 'DESC')->paginate(4);
         $prices=price::all();
-//        $all = $data->orderBy('created_at','DESC');
+
         return view('welcome',['announcements'=>$data,'prices'=>$prices]);
     }
 

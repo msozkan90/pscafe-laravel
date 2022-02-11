@@ -1,28 +1,7 @@
 @extends('admin_panel.layout_panel')
 @section('style')
     <style>
-        /*svg.w-5{*/
-        /*    height: 25px;*/
-        /*    width: 25px;*/
 
-        /*}*/
-        /*nav.items-center{*/
-        /*    display: inline-block;*/
-
-        /*}*/
-        /*p.text-sm{*/
-        /*    color: white;*/
-
-        /*    padding: 10px;*/
-
-        /*    font-size: 16px;*/
-        /*    text-align: center;*/
-        /*}*/
-
-        /*span.relative{*/
-        /*    margin: 0px!important;*/
-
-        /*}*/
     </style>
 @endsection
 @section('content')

@@ -70,22 +70,7 @@
 
 <script type="text/javascript" src="{{asset('admin_panel/js/templatemo-script.js')}}"></script>      <!-- Templatemo Script -->
 <script>
-    // var header = document.getElementsByClassName("but-list");
-    // var sideButtons = document.getElementsByClassName('side-menu');
-    // var current = document.getElementsByClassName("active");
-    // //
-    // for (i = 0; i < sideButtons.length; i++) {
-    //     sideButtons[i].addEventListener('click', function(e){
-    //         // if(this.name)
-    //         console.log(location.pathname)
-    //         console.log(this.parentElement.data())
-    //
-    //         this.className += "active";
-    //
-    //         e.preventDefault();
-    //     })
-    //
-    // }
+
 
 
 

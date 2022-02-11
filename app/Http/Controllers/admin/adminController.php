@@ -314,24 +314,7 @@ class adminController extends Controller
         }
     }
 
-//    public function panel(){
-//        return view('admin_panel.index_admin');
-//    }
-//    public function panel2(){
-//        return view('admin_panel.data-visualization');
-//    }
-//    public function panel3(){
-//        return view('admin_panel.login');
-//    }
-//    public function panel4(){
-//        return view('admin_panel.manage-users');
-//    }
-//    public function panel5(){
-//        return view('admin_panel.maps');
-//    }
-//    public function panel6(){
-//        return view('admin_panel.preferences');
-//    }
+
 
 
 

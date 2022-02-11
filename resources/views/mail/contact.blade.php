@@ -5,9 +5,7 @@
             border: 2px solid black!important;
             border-radius: 8px!important;
         }
-        /*section#contact{*/
-        /*    background-image: */
-        /*}*/
+
         .form-auth{
 
             font-weight: bold;
