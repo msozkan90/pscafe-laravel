@@ -59,7 +59,6 @@ Route::group(['namespace'=>'App\Http\Controllers\admin','prefix'=>'admin','as'=>
     });
     Route::group(['namespace'=>'users','prefix'=>'users','as'=>'users.'],function (){
         Route::get('/','\App\Http\Controllers\admin\adminController@users_dashboard')->name('dashboard');
-        Route::get('/add','\App\Http\Controllers\admin\adminController@users_add')->name('add');
         Route::post('/add','\App\Http\Controllers\admin\adminController@users_store')->name('add.post');
         Route::get('/delete/{id}','\App\Http\Controllers\admin\adminController@users_delete')->name('delete');
         Route::get('/edit/{id}','\App\Http\Controllers\admin\adminController@users_edit')->name('edit');

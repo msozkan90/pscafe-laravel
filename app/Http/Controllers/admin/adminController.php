@@ -2,15 +2,17 @@
 
 namespace App\Http\Controllers\admin;
 
+use App\Models\User;
 use App\Helper\imageUpload;
 use App\Http\Controllers\Controller;
 use App\Models\Announcement;
 use App\Models\price;
 use App\Models\sss;
-use http\Client\Curl\User;
+//use http\Client\Curl\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
-
+use Illuminate\Support\Facades\Validator;
 class adminController extends Controller
 {
     public function dashboard()
@@ -250,10 +252,11 @@ class adminController extends Controller
         return view('admin.users.dashboard',['announcements'=>$data]);
     }
     public function users_edit($id){
+        $data2 = \App\Models\User::paginate(10);
         $c = \App\Models\User::where('id','=',$id)->count();
         if($c!=0) {
             $data = \App\Models\User::where('id', '=', $id)->get();
-            return view('admin.users.edit', ['data' => $data]);
+            return view('admin.users.edit', ['data' => $data,'announcements'=>$data2]);
         }
         else
         {
@@ -267,7 +270,9 @@ class adminController extends Controller
         if($c!=0)
         {
             $data = \App\Models\User::where('id','=',$id)->get();
+
             $all = $request->except('_token');
+            $all['password']= Hash::make($all['password']);
             $update = \App\Models\User::where('id','=',$id)->update($all);
             if($update)
             {
@@ -293,7 +298,7 @@ class adminController extends Controller
         }
         else
         {
-            return redirect('/');
+            return redirect('admin.users.dashboard');
         }
     }
     public function users_add(){
@@ -302,17 +307,34 @@ class adminController extends Controller
     }
     public function users_store(Request $request){
             $all = $request->except('_token');
-            $insert = \App\Models\User::create($all);
+            Validator::make($all, [
+            'name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'password' => ['required', 'string', 'min:8', 'confirmed'],
+        ]);
+            $insert =  User::create([
+            'name' => $all['name'],
+            'email' => $all['email'],
+            'password' => Hash::make($all['password']),
+        ]);
+
 
         if($insert)
         {
+
             return redirect()->back()->with('status','Kullanıcı Eklendi');
         }
         else
         {
+
+
             return redirect()->back()->with('status','Kullanıcı Eklenemedi');
         }
     }
+
+
+
+
 
 
 

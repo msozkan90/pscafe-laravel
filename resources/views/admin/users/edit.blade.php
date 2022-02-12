@@ -49,28 +49,28 @@
         </div>
         <div class="col-1">
             <div class="panel panel-default margin-10">
-                <div class="panel-heading"><h2 class="text-uppercase">Login Form</h2></div>
+                <div class="panel-heading"><h2 class="text-uppercase">Kullanıcı Düzenle</h2></div>
                 <div class="panel-body">
-                    <form action="{{route('admin.announcement.edit.post',['id'=>$data[0]['id']])}}" enctype="multipart/form-data" method="POST" class="templatemo-login-form">
+                    <form action="{{route('admin.users.edit.post',['id'=>$data[0]['id']])}}" enctype="multipart/form-data" method="POST" class="templatemo-login-form">
                         {{csrf_field()}}
                         <div class="form-group label-floating is-empty">
-                            <label class="control-label">Duyuru Başlığı</label>
-                            <input type="text" name="title" value="{{$data[0]['name']}}" class="form-control">
+                            <label class="control-label">Kullanıcı Adı</label>
+                            <input type="text" name="name" value="{{$data[0]['name']}}" class="form-control">
                             <span class="material-input"></span>
                         </div>
                         <div class="form-group label-floating is-empty">
-                            <label class="control-label">Duyuru Başlığı</label>
-                            <input type="text" name="title" value="{{$data[0]['email']}}" class="form-control">
+                            <label class="control-label">E-Mail</label>
+                            <input type="text" name="email" value="{{$data[0]['email']}}" class="form-control">
                             <span class="material-input"></span>
                         </div>
                         <div class="form-group label-floating is-empty">
-                            <label class="control-label">Duyuru Başlığı</label>
-                            <input type="text" name="title" value="{{$data[0]['title']}}" class="form-control">
+                            <label class="control-label">Şifre</label>
+                            <input type="text" name="password" value="{{$data[0]['password']}}" class="form-control">
                             <span class="material-input"></span>
                         </div>
 
                         <div class="form-group">
-                            <button type="submit" class="templatemo-blue-button">Duyuru Düzenle</button>
+                            <button type="submit" class="templatemo-blue-button">Kullanıcı DÜzenle</button>
                         </div>
 
                     </form>

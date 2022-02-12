@@ -49,27 +49,48 @@
         </div>
         <div class="col-1">
             <div class="panel panel-default margin-10">
-                <div class="panel-heading"><h2 class="text-uppercase">Login Form</h2></div>
+                <div class="panel-heading"><h2 class="text-uppercase">Kullanıcı Kayıt</h2></div>
                 <div class="panel-body">
-                    <form action="{{route('admin.admin_panel.add.post')}}" enctype="multipart/form-data" method="POST" class="templatemo-login-form">
-                        {{csrf_field()}}
+                    <form action="{{route('admin.users.add.post')}}" enctype="multipart/form-data" method="POST" class="templatemo-login-form">
+{{--                        {{csrf_field()}}--}}
+                        @csrf
                         <div class="form-group label-floating is-empty">
-                            <label class="control-label">Duyuru Başlığı</label>
-                            <input type="text" name="title" class="form-control">
+                            <label class="control-label">Kullanıcı Adı</label>
+                            <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
                             <span class="material-input"></span>
+                            @error('name')
+                            <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                            @enderror
                         </div>
                         <div class="form-group label-floating is-empty">
-                            <label class="control-label">Duyuru İçeriği</label>
-                            <textarea name="content" id="" cols="30" rows="10"
-                                      class="form-control"></textarea>
+                            <label class="control-label">E-mail</label>
+                            <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
+                            <span class="material-input"></span>
+                            @error('email')
+                            <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                            @enderror
+                        </div>
+                        <div class="form-group label-floating is-empty">
+                            <label class="control-label">Şifre</label>
+                            <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
+                            <span class="material-input"></span>
+                            @error('password')
+                            <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                            @enderror
+                        </div>
+                        <div class="form-group label-floating is-empty">
+                            <label class="control-label">Şifre Tekrar</label>
+                            <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
                             <span class="material-input"></span>
                         </div>
                         <div class="form-group">
-                            <input type="file" name="image" placeholder="Choose image" id="image">
-
-                        </div>
-                        <div class="form-group">
-                            <button type="submit" class="templatemo-blue-button">Submit</button>
+                            <button type="submit" class="templatemo-blue-button">Kullanıcı Ekle</button>
                         </div>
 
                     </form>
